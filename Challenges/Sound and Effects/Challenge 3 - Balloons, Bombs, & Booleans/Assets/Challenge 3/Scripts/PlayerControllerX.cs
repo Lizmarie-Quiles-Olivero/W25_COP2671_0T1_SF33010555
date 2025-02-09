@@ -9,6 +9,7 @@ public class PlayerControllerX : MonoBehaviour
     public float floatForce;
     private float gravityModifier = 1.5f;
     private Rigidbody playerRb;
+    public bool isLowEnough;
 
     public ParticleSystem explosionParticle;
     public ParticleSystem fireworksParticle;
@@ -16,6 +17,7 @@ public class PlayerControllerX : MonoBehaviour
     private AudioSource playerAudio;
     public AudioClip moneySound;
     public AudioClip explodeSound;
+    public AudioClip groundSound;
 
 
     // Start is called before the first frame update
@@ -34,9 +36,19 @@ public class PlayerControllerX : MonoBehaviour
     void Update()
     {
         // While space is pressed and player is low enough, float up
-        if (Input.GetKey(KeyCode.Space) && !gameOver)
+        if (Input.GetKey(KeyCode.Space) && !gameOver && isLowEnough)
         {
             playerRb.AddForce(Vector3.up * floatForce);
+        }
+
+        //If player goes too high on the screen, they can no longer float any higher
+        if (transform.position.y > 10)
+        {
+            isLowEnough = false;
+        }
+        else
+        {
+            isLowEnough = true;
         }
     }
 
@@ -61,6 +73,12 @@ public class PlayerControllerX : MonoBehaviour
 
         }
 
+        //If player hits the ground, they bounce back up to the screen
+        else if (other.gameObject.CompareTag("Ground") && !gameOver)
+        {
+            playerRb.AddForce(Vector3.up * 13, ForceMode.Impulse);
+            playerAudio.PlayOneShot(groundSound, 1.0f);
+        }
     }
 
 }
