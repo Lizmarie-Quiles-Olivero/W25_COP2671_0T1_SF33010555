@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
+      propertyPath: m_TagString
+      value: Zombie
+      objectReference: {fileID: 0}
     - target: {fileID: 1036967873081412811, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -82,6 +86,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2070850762365457628}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2987885292170417762}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1035065227019624874}
   m_SourcePrefab: {fileID: 100100000, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
 --- !u!1 &2990536703778310277 stripped
 GameObject:
@@ -100,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d729778c84eb07a4db90da7d78f4f135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 10
 --- !u!114 &2070850762365457628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,5 +121,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08b7d06d3a591d94f948c898dc90cc1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &2987885292170417762
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2990536703778310277}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9769516, y: 3.061367, z: 1.0976952}
+  m_Center: {x: 0.02930832, y: 1.5093907, z: -0.048847534}
+--- !u!114 &-1035065227019624874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2990536703778310277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a933e4d51e4d304bb6175180b2435e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
