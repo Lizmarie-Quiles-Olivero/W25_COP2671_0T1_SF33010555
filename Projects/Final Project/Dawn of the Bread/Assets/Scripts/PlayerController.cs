@@ -4,9 +4,10 @@ public class PlayerController : MonoBehaviour
 {
     //Public variables
     public float horizontalInput;
+    public GameObject [] projectilePrefab;
 
     //Private variables
-    private float speed = 25.0f;
+    private float speed = 45.0f;
     private float xRange = 25;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -30,6 +31,16 @@ public class PlayerController : MonoBehaviour
         if (transform.position.x > xRange)
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+        }
+
+        //Launch projectiles from the player
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            Instantiate(projectilePrefab[0], transform.position, projectilePrefab[0].transform.rotation);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            Instantiate(projectilePrefab[1], transform.position, projectilePrefab[1].transform.rotation);
         }
     }
 }
