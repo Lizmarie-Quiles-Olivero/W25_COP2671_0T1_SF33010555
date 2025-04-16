@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class DestroyoutofBounds : MonoBehaviour
 {
+    //public variables
+    public ParticleSystem explosionParticle;
+
     //Private Variables
     private float topBound = 40;
     private float lowBound = -10;
@@ -22,6 +25,8 @@ public class DestroyoutofBounds : MonoBehaviour
         if (transform.position.z < lowBound)
         {
             Debug.Log("Game Over!");
+            explosionParticle.transform.parent = null;
+            explosionParticle.Play();
             Destroy(gameObject);
         }
     }

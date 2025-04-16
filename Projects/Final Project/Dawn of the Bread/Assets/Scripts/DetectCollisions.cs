@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class DetectCollisions : MonoBehaviour
 {
+    //Public variables
+    public ParticleSystem explosionParticle;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +22,8 @@ public class DetectCollisions : MonoBehaviour
     {
         if (other.CompareTag("Can"))
         {
+            explosionParticle.transform.parent = null;
+            explosionParticle.Play();
             Destroy(gameObject);
             Destroy(other.gameObject);
         }
