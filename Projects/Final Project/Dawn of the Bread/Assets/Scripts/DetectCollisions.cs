@@ -4,11 +4,15 @@ public class DetectCollisions : MonoBehaviour
 {
     //Public variables
     public ParticleSystem explosionParticle;
+    public AudioClip explosionSound;
+
+    //Private Variables
+    private AudioSource enemyAudio;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        enemyAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -22,10 +26,10 @@ public class DetectCollisions : MonoBehaviour
     {
         if (other.CompareTag("Can"))
         {
-            explosionParticle.transform.parent = null;
             explosionParticle.Play();
-            Destroy(gameObject);
-            Destroy(other.gameObject);
+            enemyAudio.PlayOneShot(explosionSound, 1f);
+            Destroy(gameObject, 0.05f);
+            Destroy(other.gameObject, 0.05f);
         }
     }
 }
