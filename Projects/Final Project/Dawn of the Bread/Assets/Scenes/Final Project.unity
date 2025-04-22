@@ -889,29 +889,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1069989352}
-  - component: {fileID: 1069989351}
+  - component: {fileID: 1069989353}
   m_Layer: 0
-  m_Name: SpawnManager
+  m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1069989351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1069989350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28858351062ceb142947bdd08a52e0ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 9189221586700767879, guid: 74f9dbcc2e3aeab4587dc04ec1bae780, type: 3}
-  - {fileID: 2990536703778310277, guid: a652f9aeff33c074da66b8a9aa819869, type: 3}
 --- !u!4 &1069989352
 Transform:
   m_ObjectHideFlags: 0
@@ -927,6 +912,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1069989353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069989350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28858351062ceb142947bdd08a52e0ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 9189221586700767879, guid: 74f9dbcc2e3aeab4587dc04ec1bae780, type: 3}
+  - {fileID: 2990536703778310277, guid: a652f9aeff33c074da66b8a9aa819869, type: 3}
+  explosionParticle: {fileID: 0}
+  explosionSound: {fileID: 0}
 --- !u!850595691 &1118042695
 LightingSettings:
   m_ObjectHideFlags: 0

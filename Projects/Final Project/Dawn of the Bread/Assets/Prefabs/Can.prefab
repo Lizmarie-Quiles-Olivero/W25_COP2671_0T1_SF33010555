@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionParticle: {fileID: 0}
+  explosionSound: {fileID: 0}
 --- !u!65 &-8426502822319631625
 BoxCollider:
   m_ObjectHideFlags: 0

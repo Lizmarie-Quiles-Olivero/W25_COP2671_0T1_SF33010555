@@ -268,11 +268,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
       propertyPath: m_Name
-      value: Scavenger
+      value: Alien
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
       propertyPath: m_TagString
-      value: Scavenger
+      value: Alien
       objectReference: {fileID: 0}
     - target: {fileID: 1036967873081412811, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -303,10 +303,10 @@ PrefabInstance:
       addedObject: {fileID: 1224755433537855986}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4405320302864467130}
+      addedObject: {fileID: -1958990970049537006}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -1958990970049537006}
+      addedObject: {fileID: 9101413796351300708}
   m_SourcePrefab: {fileID: 100100000, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
 --- !u!4 &8416520666829211709 stripped
 Transform:
@@ -366,20 +366,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9308265, y: 3.0880737, z: 1.0419289}
   m_Center: {x: 0.012578964, y: 1.5388012, z: -0.020964433}
---- !u!114 &4405320302864467130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9189221586700767879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 144d5a15062fa804187e6427f9972a27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionParticle: {fileID: 5035801188382182085}
-  explosionSound: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}
 --- !u!82 &-1958990970049537006
 AudioSource:
   m_ObjectHideFlags: 0
@@ -477,3 +463,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &9101413796351300708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9189221586700767879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28858351062ceb142947bdd08a52e0ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs: []
+  explosionParticle: {fileID: 5035801188382182085}
+  explosionSound: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}

@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Scavenger
   - Zombie
   - Can
   - Meat
+  - Alien
   layers:
   - Default
   - TransparentFX
