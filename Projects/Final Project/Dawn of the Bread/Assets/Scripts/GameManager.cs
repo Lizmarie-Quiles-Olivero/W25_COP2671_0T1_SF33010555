@@ -1,16 +1,19 @@
+using TMPro;
 using UnityEngine;
 using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
     //Public variables
+    public AudioClip explosionSound;
+    public TextMeshProUGUI timeText;
     public GameObject[] enemyPrefabs;
     public ParticleSystem explosionParticle;
-    public AudioClip explosionSound;
 
     //Private Variables
-    private float spawnRangeX = 25;
+    private float time = 60;
     private float spawnPosZ = 40;
+    private float spawnRangeX = 25;
     private float spawnRate = 4.0f;
     private AudioSource enemyAudio;
 
@@ -23,7 +26,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        TimeLeft();
     }
 
     //Spawns enemies randomly in a set area
@@ -47,8 +50,8 @@ public class GameManager : MonoBehaviour
             {
                 explosionParticle.Play();
                 AudioSource.PlayClipAtPoint(explosionSound, Camera.main.transform.position, 0.5f);
-                Destroy(gameObject, 0.05f);
-                Destroy(other.gameObject, 0.05f);
+                Destroy(gameObject, 0.03f);
+                Destroy(other.gameObject, 0.03f);
             }
         }
 
@@ -59,9 +62,16 @@ public class GameManager : MonoBehaviour
             {
                 explosionParticle.Play();
                 AudioSource.PlayClipAtPoint(explosionSound, Camera.main.transform.position, 0.5f);
-                Destroy(gameObject, 0.05f);
-                Destroy(other.gameObject, 0.05f);
+                Destroy(gameObject, 0.03f);
+                Destroy(other.gameObject, 0.03f);
             }
         }
+    }
+
+    //Timer for game
+    public void TimeLeft()
+    {
+        time -= Time.deltaTime;
+        timeText.text = "Time: " + Mathf.Round(time);
     }
 }

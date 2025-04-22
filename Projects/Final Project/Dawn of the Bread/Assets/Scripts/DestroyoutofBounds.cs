@@ -26,8 +26,6 @@ public class DestroyoutofBounds : MonoBehaviour
         }
         else if (transform.position.z < lowBound)
         {
-            Debug.Log("Game Over!");
-            explosionParticle.transform.parent = null;
             explosionParticle.Play();
             AudioSource.PlayClipAtPoint(explosionSound, Camera.main.transform.position, 0.5f);
             Destroy(gameObject);

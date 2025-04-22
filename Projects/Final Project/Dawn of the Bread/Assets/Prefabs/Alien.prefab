@@ -475,6 +475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28858351062ceb142947bdd08a52e0ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs: []
-  explosionParticle: {fileID: 5035801188382182085}
+  pointValue: 10
   explosionSound: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}
+  enemyPrefabs: []
+  scoreText: {fileID: 0}
+  explosionParticle: {fileID: 5035801188382182085}
