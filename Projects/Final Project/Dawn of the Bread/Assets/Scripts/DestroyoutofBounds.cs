@@ -24,13 +24,13 @@ public class DestroyoutofBounds : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (transform.position.z < lowBound)
+        else if (transform.position.z < lowBound)
         {
             Debug.Log("Game Over!");
             explosionParticle.transform.parent = null;
             explosionParticle.Play();
-            enemyAudio.PlayOneShot(explosionSound, 1f);
-            Destroy(gameObject, 0.1f);
+            AudioSource.PlayClipAtPoint(explosionSound, Camera.main.transform.position, 0.5f);
+            Destroy(gameObject);
         }
     }
 }

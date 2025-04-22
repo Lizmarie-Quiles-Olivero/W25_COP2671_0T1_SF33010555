@@ -27,7 +27,7 @@ public class DetectCollisions_2 : MonoBehaviour
         if (other.CompareTag("Meat"))
         {
             explosionParticle.Play();
-            enemyAudio.PlayOneShot(explosionSound, 1f);
+            AudioSource.PlayClipAtPoint(explosionSound, Camera.main.transform.position, 0.5f);
             Destroy(gameObject, 0.05f);
             Destroy(other.gameObject, 0.05f);
         }

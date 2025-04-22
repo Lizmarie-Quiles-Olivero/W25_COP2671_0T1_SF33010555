@@ -56,12 +56,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Instantiate(projectilePrefab[0], transform.position, projectilePrefab[0].transform.rotation);
-            playerAudio.PlayOneShot(magicSound, 1f);
+            AudioSource.PlayClipAtPoint(magicSound, Camera.main.transform.position, 0.5f);
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             Instantiate(projectilePrefab[1], transform.position, projectilePrefab[1].transform.rotation);
-            playerAudio.PlayOneShot(magicSound, 1f);
+            AudioSource.PlayClipAtPoint(magicSound, Camera.main.transform.position, 0.5f);
         }
     }
 }
