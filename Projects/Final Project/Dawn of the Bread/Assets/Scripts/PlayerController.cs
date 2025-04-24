@@ -12,56 +12,69 @@ public class PlayerController : MonoBehaviour
     private float speed = 45.0f;
     private float xRange = 25;
     private AudioSource playerAudio;
+    private GameManager gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerAudio = GetComponent<AudioSource>();
+        GameObject gmObject = GameObject.Find("Game Manager");
+        if (gmObject != null)
+        {
+            gameManager = gmObject.GetComponent<GameManager>();
+        }
+        else
+        {
+            Debug.LogError("Game Manager not found in scene!");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Player movement
-        horizontalInput = Input.GetAxis("Horizontal");
-        if (Mathf.Abs(horizontalInput) > 0.01f)
+        if (gameManager.isGameActive)
         {
-            if (!playerAudio.isPlaying)
+            //Player movement
+            horizontalInput = Input.GetAxis("Horizontal");
+            if (Mathf.Abs(horizontalInput) > 0.01f)
             {
-                playerAudio.clip = flyingSound;
-                playerAudio.loop = true;
-                playerAudio.Play();
+                if (!playerAudio.isPlaying)
+                {
+                    playerAudio.clip = flyingSound;
+                    playerAudio.loop = true;
+                    playerAudio.Play();
+                }
+                transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
             }
-            transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
-        }
-        else
-        {
-            if (playerAudio.isPlaying)
+            else
             {
-                playerAudio.Stop();
+                if (playerAudio.isPlaying)
+                {
+                    playerAudio.Stop();
+                }
             }
-        }
 
-        //Keeps player in bounds
-        if (transform.position.x < -xRange)
-        {
-            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
-        }
-        if (transform.position.x > xRange)
-        {
-            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
-        }
+            //Keeps player in bounds
+            if (transform.position.x < -xRange)
+            {
+                transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
+            }
+            if (transform.position.x > xRange)
+            {
+                transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+            }
 
-        //Launch projectiles from the player
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            Instantiate(projectilePrefab[0], transform.position, projectilePrefab[0].transform.rotation);
-            AudioSource.PlayClipAtPoint(magicSound, Camera.main.transform.position, 0.5f);
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            Instantiate(projectilePrefab[1], transform.position, projectilePrefab[1].transform.rotation);
-            AudioSource.PlayClipAtPoint(magicSound, Camera.main.transform.position, 0.5f);
+            //Launch projectiles from the player
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                Instantiate(projectilePrefab[0], transform.position, projectilePrefab[0].transform.rotation);
+                AudioSource.PlayClipAtPoint(magicSound, Camera.main.transform.position, 0.5f);
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                Instantiate(projectilePrefab[1], transform.position, projectilePrefab[1].transform.rotation);
+                AudioSource.PlayClipAtPoint(magicSound, Camera.main.transform.position, 0.5f);
+            }
         }
     }
 }

@@ -307,6 +307,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9101413796351300708}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7233422534771117438}
   m_SourcePrefab: {fileID: 100100000, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
 --- !u!4 &8416520666829211709 stripped
 Transform:
@@ -475,8 +478,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28858351062ceb142947bdd08a52e0ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointValue: 10
-  explosionSound: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}
+  timeText: {fileID: 0}
   enemyPrefabs: []
-  scoreText: {fileID: 0}
+--- !u!114 &7233422534771117438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9189221586700767879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990e97f69ea0a7d44b73a298b96e9bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionSound: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
   explosionParticle: {fileID: 5035801188382182085}
