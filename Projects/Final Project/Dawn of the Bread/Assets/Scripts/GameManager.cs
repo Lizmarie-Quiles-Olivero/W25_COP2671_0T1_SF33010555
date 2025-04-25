@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public bool isGameActive;
     public Button restartButton;
+    public GameObject titleScreen;
 
     //Private Variables
     private float spawnPosZ = 40;
@@ -21,15 +22,22 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        isGameActive = true;
         gameOverText.gameObject.SetActive(false);
-        spawnCoroutine = StartCoroutine(SpawnTarget());
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    //Starts Game
+    public void StartGame(int difficulty)
+    {
+        isGameActive = true;
+        spawnRate /= difficulty;
+        spawnCoroutine = StartCoroutine(SpawnTarget());
+        titleScreen.gameObject.SetActive(false);
     }
 
     //Timer for game
@@ -51,6 +59,11 @@ public class GameManager : MonoBehaviour
             int enemyIndex = Random.Range(0, enemyPrefabs.Length);
             Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
             Instantiate(enemyPrefabs[enemyIndex], spawnPos, enemyPrefabs[enemyIndex].transform.rotation);
+
+            if (spawnCoroutine != null)
+            {
+                StopCoroutine(spawnCoroutine);
+            }
         }
     }
 
