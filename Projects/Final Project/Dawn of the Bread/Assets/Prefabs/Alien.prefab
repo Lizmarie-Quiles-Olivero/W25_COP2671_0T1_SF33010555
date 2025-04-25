@@ -228,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20
+      value: 31.44655
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -236,7 +236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25
+      value: 34.610962
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -277,7 +277,7 @@ PrefabInstance:
     - target: {fileID: 1036967873081412811, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: e47e8f0bb92aaff4c93eedb0398a1c96, type: 2}
+      objectReference: {fileID: 2100000, guid: 05b92fe9187c747429c7a303f90baafc, type: 2}
     - target: {fileID: 5866666021909216657, guid: bc759b2d7e73e1b478a7bdc2b0ec43cb, type: 3}
       propertyPath: m_Controller
       value: 
@@ -480,6 +480,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeText: {fileID: 0}
   enemyPrefabs: []
+  gameOverText: {fileID: 0}
+  isGameActive: 0
+  restartButton: {fileID: 0}
 --- !u!114 &7233422534771117438
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        gameOverText.gameObject.SetActive(false);
         isGameActive = true;
+        gameOverText.gameObject.SetActive(false);
         spawnCoroutine = StartCoroutine(SpawnTarget());
     }
 
@@ -51,18 +51,12 @@ public class GameManager : MonoBehaviour
             int enemyIndex = Random.Range(0, enemyPrefabs.Length);
             Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
             Instantiate(enemyPrefabs[enemyIndex], spawnPos, enemyPrefabs[enemyIndex].transform.rotation);
-
-            if (spawnCoroutine != null)
-            {
-                StopCoroutine(spawnCoroutine);
-            }
         }
     }
 
     //Restarts game
     public void RestartGame()
     {
-        Debug.Log("Restart Button Clicked");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

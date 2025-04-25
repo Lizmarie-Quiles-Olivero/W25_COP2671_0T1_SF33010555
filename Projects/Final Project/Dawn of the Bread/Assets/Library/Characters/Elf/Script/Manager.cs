@@ -4,7 +4,7 @@ using System.Collections;
 public class Manager : MonoBehaviour {
 
 	public GameObject CameraObj;
-	public Camera camera;
+	public new Camera camera;
 
 	public bool left = false;
 	public bool right = false;
@@ -14,9 +14,10 @@ public class Manager : MonoBehaviour {
 	void Start () {
 	
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    [System.Obsolete]
+    void Update () {
 
 		if (Input.GetMouseButtonUp (0))
 		{
@@ -27,7 +28,7 @@ public class Manager : MonoBehaviour {
 		}
 		if(left == true)
 		{
-			CameraObj.transform.RotateAround(Vector3.down, Time.deltaTime * 5);
+            CameraObj.transform.RotateAround(Vector3.down, Time.deltaTime * 5);
 		}
 		if(right == true)
 		{

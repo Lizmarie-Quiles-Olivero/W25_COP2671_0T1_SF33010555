@@ -16,15 +16,7 @@ public class DestroyoutofBounds : MonoBehaviour
     void Start()
     {
         enemyAudio = GetComponent<AudioSource>();
-        GameObject gmObject = GameObject.Find("Game Manager");
-        if (gmObject != null)
-        {
-            gameManager = gmObject.GetComponent<GameManager>();
-        }
-        else
-        {
-            Debug.LogError("Game Manager not found in scene!");
-        }
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
