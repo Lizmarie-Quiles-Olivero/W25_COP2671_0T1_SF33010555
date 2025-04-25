@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d729778c84eb07a4db90da7d78f4f135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 15
 --- !u!114 &1994972482630992606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,6 +483,7 @@ MonoBehaviour:
   gameOverText: {fileID: 0}
   isGameActive: 0
   restartButton: {fileID: 0}
+  titleScreen: {fileID: 0}
 --- !u!114 &7233422534771117438
 MonoBehaviour:
   m_ObjectHideFlags: 0

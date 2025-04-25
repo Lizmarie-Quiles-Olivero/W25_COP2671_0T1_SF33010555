@@ -7,12 +7,14 @@ public class PlayerController : MonoBehaviour
     public GameObject [] projectilePrefab;
     public AudioClip flyingSound;
     public AudioClip magicSound;
+    public GameObject pauseMenuUI;
 
     //Private variables
     private float speed = 45.0f;
     private float xRange = 25;
     private AudioSource playerAudio;
     private GameManager gameManager;
+    private bool isPaused;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,6 +26,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+
+        }
+
         if (gameManager.isGameActive)
         {
             //Player movement
@@ -68,5 +75,21 @@ public class PlayerController : MonoBehaviour
                 AudioSource.PlayClipAtPoint(magicSound, Camera.main.transform.position, 0.5f);
             }
         }
+    }
+
+    //Pauses game
+    void Pause()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+    }
+
+    //Resumes game
+    public void Resume()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
     }
 }

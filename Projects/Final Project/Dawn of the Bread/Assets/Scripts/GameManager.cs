@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject titleScreen;
 
     //Private Variables
+    private float time;
     private float spawnPosZ = 40;
     private float spawnRangeX = 25;
     private float spawnRate = 4.0f;
@@ -28,7 +29,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (isGameActive)
+        {
+            TimeLeft();
+        }
+        if (time < 0)
+        {
+            GameOver();
+        }
     }
 
     //Starts Game
@@ -37,10 +45,16 @@ public class GameManager : MonoBehaviour
         isGameActive = true;
         spawnRate /= difficulty;
         spawnCoroutine = StartCoroutine(SpawnTarget());
+        time = 60;
         titleScreen.gameObject.SetActive(false);
     }
 
     //Timer for game
+    public void TimeLeft()
+    {
+        time -= Time.deltaTime;
+        timeText.text = "Time: " + Mathf.Round(time);
+    }
 
     //Game Over screen
     public void GameOver()
@@ -59,11 +73,6 @@ public class GameManager : MonoBehaviour
             int enemyIndex = Random.Range(0, enemyPrefabs.Length);
             Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
             Instantiate(enemyPrefabs[enemyIndex], spawnPos, enemyPrefabs[enemyIndex].transform.rotation);
-
-            if (spawnCoroutine != null)
-            {
-                StopCoroutine(spawnCoroutine);
-            }
         }
     }
 
