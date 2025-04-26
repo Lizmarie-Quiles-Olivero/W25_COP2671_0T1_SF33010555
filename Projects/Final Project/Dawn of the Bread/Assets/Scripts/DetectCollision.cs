@@ -5,6 +5,7 @@ public class DetectCollision : MonoBehaviour
     //Public variables
     public AudioClip explosionSound;
     public ParticleSystem explosionParticle;
+    public int pointValue;
 
     //Private Variables
     private AudioSource enemyAudio;

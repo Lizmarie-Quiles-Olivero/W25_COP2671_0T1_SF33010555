@@ -481,9 +481,11 @@ MonoBehaviour:
   timeText: {fileID: 0}
   enemyPrefabs: []
   gameOverText: {fileID: 0}
+  scoreText: {fileID: 0}
   isGameActive: 0
   restartButton: {fileID: 0}
   titleScreen: {fileID: 0}
+  controlInstructions: {fileID: 0}
 --- !u!114 &7233422534771117438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,3 +500,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionSound: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
   explosionParticle: {fileID: 5035801188382182085}
+  pointValue: 10

@@ -9,10 +9,12 @@ public class GameManager : MonoBehaviour
     //Public variables
     public TextMeshProUGUI timeText;
     public GameObject[] enemyPrefabs;
-    public TextMeshProUGUI gameOverText;
+    public GameObject gameOverScreen;
+    public TextMeshProUGUI scoreboardText;
     public bool isGameActive;
     public Button restartButton;
     public GameObject titleScreen;
+    public GameObject controlInstructions;
 
     //Private Variables
     private float time;
@@ -23,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        gameOverText.gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -46,6 +48,14 @@ public class GameManager : MonoBehaviour
         spawnRate /= difficulty;
         spawnCoroutine = StartCoroutine(SpawnTarget());
         time = 60;
+        setActive();
+    }
+
+    //Turns gameOnjects into true or false
+    public void setActive()
+    {
+        timeText.gameObject.SetActive(true);
+        controlInstructions.gameObject.SetActive(true);
         titleScreen.gameObject.SetActive(false);
     }
 
@@ -59,9 +69,11 @@ public class GameManager : MonoBehaviour
     //Game Over screen
     public void GameOver()
     {
-        gameOverText.gameObject.SetActive(true);
-        restartButton.gameObject.SetActive(true);
         isGameActive = false;
+        gameOverScreen.gameObject.SetActive(true);
+        controlInstructions.gameObject.SetActive(false);
+        timeText.gameObject.SetActive(false);
+        scoreboardText.text = "Your survival time is " + Mathf.Round(time) + " seconds.";
     }
 
     //Spawns enemies randomly in a set area
