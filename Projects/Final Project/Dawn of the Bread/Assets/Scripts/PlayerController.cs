@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private float xRange = 25;
     private AudioSource playerAudio;
     private GameManager gameManager;
-    private bool isPaused;
+    private bool isPaused = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,7 +28,14 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-
+            if (isPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
         }
 
         if (gameManager.isGameActive)
@@ -80,16 +87,16 @@ public class PlayerController : MonoBehaviour
     //Pauses game
     void Pause()
     {
+        isPaused = true;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        isPaused = true;
     }
 
     //Resumes game
     public void Resume()
     {
+        isPaused = false;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        isPaused = false;
     }
 }
